@@ -1,1 +1,900 @@
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhishek Dwivedi - Full-Stack Developer</title>
+    <meta name="description" content="Abhishek Dwivedi - Full-Stack Developer | B.Tech CSE 2026 | Building fast, scalable, and human-centered web solutions." />
+    <meta name="author" content="Abhishek Dwivedi" />
+    <meta property="og:title" content="Abhishek Dwivedi - Full-Stack Developer" />
+    <meta property="og:description" content="Full-Stack Developer | B.Tech CSE 2026 | Building fast, scalable, and human-centered web solutions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      /* Inline custom CSS from index.css and App.css */
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Poppins', 'Inter', system-ui, sans-serif; }
+      .animation-delay-1000 { animation-delay: 1s; }
+      .animation-delay-2000 { animation-delay: 2s; }
+      .animation-delay-3000 { animation-delay: 3s; }
+      .animation-delay-4000 { animation-delay: 4s; }
+      .gradient-text { background: linear-gradient(to right, #a78bfa, #60a5fa, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .glass-card { background: rgba(30,41,59,0.4); backdrop-filter: blur(20px); border: 1px solid rgba(147,51,234,0.3); }
+      .neon-glow { box-shadow: 0 0 20px rgba(147,51,234,0.3), 0 0 40px rgba(147,51,234,0.1); }
+      .neon-text { text-shadow: 0 0 10px rgba(147,51,234,0.5), 0 0 20px rgba(147,51,234,0.3); }
+      .particles { position: absolute; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+      .particle { position: absolute; border-radius: 50%; animation: float 6s ease-in-out infinite; }
+      @keyframes float { 0%,100%{transform:translateY(0px);opacity:.7;}25%{transform:translateY(-30px);opacity:1;}50%{transform:translateY(-15px);opacity:.8;}75%{transform:translateY(-25px);opacity:.9;} }
+      @keyframes blob { 0%{transform:translate(0,0)scale(1);}33%{transform:translate(30px,-50px)scale(1.1);}66%{transform:translate(-20px,20px)scale(.9);}100%{transform:translate(0,0)scale(1);} }
+      .animate-blob { animation: blob 7s infinite; }
+      .animate-fade-in { animation: fade-in 0.6s ease-out; }
+      .animate-slide-in-right { animation: slide-in-right 0.6s ease-out; }
+      @keyframes fade-in { from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
+      @keyframes slide-in-right { from{opacity:0;transform:translateX(20px);}to{opacity:1;transform:translateX(0);} }
+      .typing-animation::after { content: '|'; animation: blink 1s infinite; color: #9333ea; }
+      @keyframes blink { 0%,50%{opacity:1;}51%,100%{opacity:0;} }
+      .btn-pulse:hover { animation: btn-pulse 1s infinite; }
+      @keyframes btn-pulse { 0%{box-shadow:0 0 0 0 #a78bfa;}70%{box-shadow:0 0 0 10px rgba(167,139,250,0);}100%{box-shadow:0 0 0 0 rgba(167,139,250,0);} }
+      /* App.css root styles */
+      #app { max-width: 1280px; margin: 0 auto; padding: 2rem; text-align: center; }
+    </style>
+  </head>
+  <body class="bg-slate-900 text-slate-100 font-sans">
+    <div id="app">
+      <!-- Navigation -->
+      <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-6">
+          <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+              <span class="text-2xl font-bold transition-colors duration-300 text-white" id="logo">AD</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+              <button class="nav-link text-sm font-medium transition-colors duration-300 hover:scale-105 text-white/90 hover:text-white" data-target="#about">About</button>
+              <button class="nav-link text-sm font-medium transition-colors duration-300 hover:scale-105 text-white/90 hover:text-white" data-target="#skills">Skills</button>
+              <button class="nav-link text-sm font-medium transition-colors duration-300 hover:scale-105 text-white/90 hover:text-white" data-target="#projects">Projects</button>
+              <button class="nav-link text-sm font-medium transition-colors duration-300 hover:scale-105 text-white/90 hover:text-white" data-target="#experience">Experience</button>
+              <button class="nav-link text-sm font-medium transition-colors duration-300 hover:scale-105 text-white/90 hover:text-white" data-target="#coding">Coding</button>
+              <button class="nav-link text-sm font-medium transition-colors duration-300 hover:scale-105 text-white/90 hover:text-white" data-target="#contact">Contact</button>
+              <a href="#resume" class="ml-4 px-4 py-2 rounded bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-semibold flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" /></svg>Resume</a>
+            </div>
+            <div class="md:hidden">
+              <button id="mobile-menu-btn" class="text-white hover:text-gray-200"><svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg><svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
+            </div>
+          </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg hidden">
+          <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-col space-y-4">
+              <button class="nav-link text-gray-700 hover:text-purple-600 font-medium text-left py-2 transition-colors" data-target="#about">About</button>
+              <button class="nav-link text-gray-700 hover:text-purple-600 font-medium text-left py-2 transition-colors" data-target="#skills">Skills</button>
+              <button class="nav-link text-gray-700 hover:text-purple-600 font-medium text-left py-2 transition-colors" data-target="#projects">Projects</button>
+              <button class="nav-link text-gray-700 hover:text-purple-600 font-medium text-left py-2 transition-colors" data-target="#experience">Experience</button>
+              <button class="nav-link text-gray-700 hover:text-purple-600 font-medium text-left py-2 transition-colors" data-target="#coding">Coding</button>
+              <button class="nav-link text-gray-700 hover:text-purple-600 font-medium text-left py-2 transition-colors" data-target="#contact">Contact</button>
+              <a href="#resume" class="w-fit px-4 py-2 rounded bg-gradient-to-r from-purple-600 to-cyan-500 text-white font-semibold flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" /></svg>Resume</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Hero Section -->
+      <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 mt-4" id="hero">
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-r from-purple-500/30 to-violet-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+          <div class="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+          <div class="absolute -bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-indigo-500/30 to-purple-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+          <div class="absolute top-1/2 right-1/4 w-60 h-60 bg-gradient-to-r from-violet-500/20 to-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-1000"></div>
+          <div class="particles" id="particles"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="flex justify-center lg:justify-start animate-fade-in">
+              <div class="relative">
+                <div class="w-64 h-64 rounded-full bg-gradient-to-br from-purple-400 via-violet-500 to-indigo-400 p-1 animate-float neon-glow shadow-2xl">
+                  <div class="w-full h-full rounded-full bg-gradient-to-br from-indigo-900 to-purple-900 flex items-center justify-center text-5xl font-bold gradient-text border-2 border-purple-400/20">
+                    AD
+                  </div>
+                </div>
+                <div class="absolute -inset-6 rounded-full border-2 border-purple-400/40 animate-ping"></div>
+                <div class="absolute -inset-10 rounded-full border border-violet-400/30 animate-pulse"></div>
+                <div class="absolute -inset-14 rounded-full border border-indigo-400/20 animate-pulse animation-delay-1000"></div>
+              </div>
+            </div>
+            <div class="text-center lg:text-left animate-slide-in-right">
+              <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <span class="text-white">Abhishek </span>
+                <span class="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent neon-text">Dwivedi</span>
+              </h1>
+              <div class="text-2xl lg:text-3xl mb-4 font-medium h-12">
+                <span class="bg-gradient-to-r from-violet-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent typing-animation" id="role-text">Full-Stack Developer</span>
+              </div>
+              <p class="text-lg text-purple-100 mb-8 max-w-2xl leading-relaxed">
+                Building fast, scalable, and human-centered web solutions with cutting-edge technologies. 
+                Passionate about creating seamless user experiences and robust systems.
+              </p>
+              <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                <a href="https://github.com/abhishekdwivedi2022" target="_blank" class="bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-purple-400 border-2 border-purple-400/40 hover:border-purple-400/80 shadow-lg hover:shadow-purple-400/20 font-semibold px-6 py-3 rounded flex items-center gap-2 btn-pulse"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.529 2.341 1.088 2.91.832.091-.646.35-1.088.636-1.339-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.337 4.687-4.565 4.936.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.577.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>GitHub</a>
+                <a href="#" target="_blank" class="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white border-2 border-blue-400/40 hover:border-blue-400/80 shadow-lg hover:shadow-blue-400/20 font-semibold px-6 py-3 rounded flex items-center gap-2 btn-pulse"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 11-12 0 6 6 0 0112 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7m0 0h-3m3 0h3"/></svg>LinkedIn</a>
+                <a href="#resume" class="bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-400 hover:to-violet-500 text-white border-2 border-purple-400/40 hover:border-purple-400/80 shadow-lg hover:shadow-purple-400/20 font-semibold px-6 py-3 rounded flex items-center gap-2 btn-pulse"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" /></svg>Resume</a>
+                <a href="https://leetcode.com/u/rkabhishekdwivedi/" target="_blank" class="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white border-2 border-orange-400/40 hover:border-orange-400/80 shadow-lg hover:shadow-orange-400/20 font-semibold px-6 py-3 rounded flex items-center gap-2 btn-pulse"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6m-6 0h6"/></svg>LeetCode</a>
+                <a href="https://www.geeksforgeeks.org/user/r_abhishek/" target="_blank" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-white border-2 border-green-400/40 hover:border-green-400/80 shadow-lg hover:shadow-green-400/20 font-semibold px-6 py-3 rounded flex items-center gap-2 btn-pulse"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" /><path d="M8 12l2 2 4-4" /></svg>GFG</a>
+              </div>
+              <div class="mt-8 p-4 bg-gradient-to-r from-purple-900/50 to-indigo-900/50 rounded-xl border border-purple-400/20 backdrop-blur-sm">
+                <p class="text-purple-100 text-sm">
+                  📍 <span class="text-purple-300 font-semibold">Mathura, Uttar Pradesh</span> • 
+                  📧 <span class="text-violet-300 font-semibold">abhishek.dwivedi2022@glbajajgroup.org</span> • 
+                  📱 <span class="text-indigo-300 font-semibold">+91 9026019016</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section class="py-20 relative overflow-hidden" id="about">
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-20 right-10 w-80 h-80 bg-gradient-to-r from-purple-500/15 to-violet-500/15 rounded-full filter blur-3xl animate-pulse"></div>
+          <div class="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-r from-indigo-500/15 to-purple-500/15 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+          <div class="absolute top-1/3 left-1/3 w-60 h-60 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full filter blur-3xl animate-blob animation-delay-1000"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+              About <span class="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">Me</span>
+            </h2>
+            <div class="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed space-y-4">
+              <p>
+                A relentlessly curious and impact-driven B.Tech Computer Science student with hands-on experience 
+                in full-stack development, system design, and software automation.
+              </p>
+              <p>
+                Skilled in solving technical problems using scalable, maintainable code, focused on building 
+                practical solutions influenced by AI, automation, and connectivity.
+              </p>
+              <p>
+                Seeking opportunities that challenge convention, foster innovation, and align with a future 
+                where code meets purpose.
+              </p>
+            </div>
+          </div>
+          <div class="grid lg:grid-cols-2 gap-12 items-start">
+            <!-- Education Timeline -->
+            <div class="glass-card hover-glow transition-all duration-500 animate-fade-in border-2 border-transparent hover:border-purple-400/50 overflow-hidden">
+              <div class="h-3 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500"></div>
+              <div class="p-8 bg-gradient-to-br from-slate-800/90 to-slate-900/90">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="p-4 bg-gradient-to-r from-purple-500 to-violet-500 rounded-xl shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0H6m6 0h6" /></svg>
+                  </div>
+                  <h3 class="text-2xl font-bold text-white">Education</h3>
+                </div>
+                <div class="space-y-6">
+                  <div class="relative pl-8 border-l-2 border-gradient-to-b from-purple-400 to-violet-400">
+                    <div class="absolute -left-3 top-0 w-6 h-6 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full animate-pulse shadow-lg"></div>
+                    <div class="space-y-3">
+                      <h4 class="text-xl font-semibold text-white">B.Tech Computer Science Engineering</h4>
+                      <p class="text-slate-400 font-medium">G.L. Bajaj Group of Institutions, Mathura</p>
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <span class="bg-gradient-to-r from-purple-500/30 to-violet-500/30 text-purple-300 border border-purple-400/40 px-3 py-1 rounded">Batch: 2022 - 2026</span>
+                        <span class="bg-gradient-to-r from-violet-500/30 to-indigo-500/30 text-violet-300 border border-violet-400/40 px-3 py-1 rounded">CGPA: 7.72/10</span>
+                        <span class="bg-gradient-to-r from-indigo-500/30 to-blue-500/30 text-indigo-300 border border-indigo-400/40 px-3 py-1 rounded">Current Student</span>
+                      </div>
+                      <div class="mt-4 p-4 bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-lg border border-purple-400/20">
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                          Currently pursuing B.Tech in Computer Science and Engineering at G.L. Bajaj Group of Institutions, 
+                          graduating in 2026 with a CGPA of 7.72/10. Specializing in full-stack development, 
+                          data structures & algorithms, and emerging technologies like AI/ML.
+                        </p>
+                      </div>
+                      <button class="w-full mt-4 text-purple-400 hover:text-purple-300 hover:bg-purple-500/10 rounded flex items-center justify-center" data-toggle="education">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                        Show Previous Education
+                      </button>
+                      <div class="mt-6 space-y-6 hidden" id="education-details">
+                        <div class="relative pl-8 border-l-2 border-gradient-to-b from-violet-400 to-indigo-400">
+                          <div class="absolute -left-3 top-0 w-6 h-6 bg-gradient-to-r from-violet-500 to-indigo-500 rounded-full shadow-lg"></div>
+                          <div class="space-y-2">
+                            <h5 class="text-lg font-semibold text-white">Senior Secondary (XII)</h5>
+                            <p class="text-slate-400">Science Stream (PCM with Computer Science)</p>
+                            <div class="flex flex-wrap gap-2">
+                              <span class="bg-gradient-to-r from-violet-500/30 to-indigo-500/30 text-violet-300 border border-violet-400/40 px-3 py-1 rounded">2021-2022</span>
+                              <span class="bg-gradient-to-r from-indigo-500/30 to-blue-500/30 text-indigo-300 border border-indigo-400/40 px-3 py-1 rounded">CBSE Board</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative pl-8 border-l-2 border-gradient-to-b from-indigo-400 to-blue-400">
+                          <div class="absolute -left-3 top-0 w-6 h-6 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full shadow-lg"></div>
+                          <div class="space-y-2">
+                            <h5 class="text-lg font-semibold text-white">Secondary (X)</h5>
+                            <p class="text-slate-400">All Subjects</p>
+                            <div class="flex flex-wrap gap-2">
+                              <span class="bg-gradient-to-r from-indigo-500/30 to-blue-500/30 text-indigo-300 border border-indigo-400/40 px-3 py-1 rounded">2019-2020</span>
+                              <span class="bg-gradient-to-r from-blue-500/30 to-cyan-500/30 text-blue-300 border border-blue-400/40 px-3 py-1 rounded">CBSE Board</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Skills, Achievements, Interests (will be filled in next steps) -->
+          </div>
+        </div>
+      </section>
+      <!-- Skills Section -->
+      <section class="py-20 relative overflow-hidden" id="skills">
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-500/20 via-violet-500/30 to-indigo-500/20 rounded-full filter blur-3xl animate-pulse"></div>
+          <div class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-violet-500/25 via-blue-500/35 to-cyan-500/25 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-indigo-500/15 via-purple-500/25 to-violet-500/15 rounded-full filter blur-3xl animate-pulse animation-delay-4000"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Technical <span class="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">Arsenal</span>
+            </h2>
+            <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              Mastering modern technologies to build scalable and innovative solutions.
+            </p>
+          </div>
+          <!-- Tab Navigation -->
+          <div class="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in" style="animation-delay: 200ms;">
+            <button class="skills-tab flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 bg-gradient-to-r from-purple-500 to-violet-600 text-white shadow-lg shadow-purple-500/25" data-tab="0"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 18v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2m16-6V6a2 2 0 00-2-2H6a2 2 0 00-2 2" /></svg><span class="font-medium">Frontend</span></button>
+            <button class="skills-tab flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 border border-slate-600/50" data-tab="1"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg><span class="font-medium">Backend</span></button>
+            <button class="skills-tab flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 border border-slate-600/50" data-tab="2"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" /><path d="M8 12l2 2 4-4" /></svg><span class="font-medium">Databases</span></button>
+            <button class="skills-tab flex items-center gap-3 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 border border-slate-600/50" data-tab="3"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" /></svg><span class="font-medium">Tools & Concepts</span></button>
+          </div>
+          <!-- Skills Grid -->
+          <div class="max-w-6xl mx-auto">
+            <div class="skills-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in" style="animation-delay: 400ms;">
+              <!-- Frontend Skills (default active) -->
+              <div class="group bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 cursor-pointer">
+                <div class="p-6">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="text-3xl group-hover:scale-110 transition-transform duration-300">🌐</div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">HTML/CSS</h3>
+                  </div>
+                  <p class="text-slate-400 text-sm group-hover:text-slate-300 transition-colors">Semantic markup & responsive design</p>
+                  <div class="mt-4 h-1 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-purple-500 to-violet-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="group bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 cursor-pointer">
+                <div class="p-6">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="text-3xl group-hover:scale-110 transition-transform duration-300">⚡</div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">JavaScript</h3>
+                  </div>
+                  <p class="text-slate-400 text-sm group-hover:text-slate-300 transition-colors">ES6+ & DOM manipulation</p>
+                  <div class="mt-4 h-1 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-purple-500 to-violet-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="group bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 cursor-pointer">
+                <div class="p-6">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="text-3xl group-hover:scale-110 transition-transform duration-300">📘</div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">TypeScript</h3>
+                  </div>
+                  <p class="text-slate-400 text-sm group-hover:text-slate-300 transition-colors">Type-safe development</p>
+                  <div class="mt-4 h-1 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-purple-500 to-violet-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="group bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 cursor-pointer">
+                <div class="p-6">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="text-3xl group-hover:scale-110 transition-transform duration-300">⚛️</div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">React.js</h3>
+                  </div>
+                  <p class="text-slate-400 text-sm group-hover:text-slate-300 transition-colors">Component-based architecture</p>
+                  <div class="mt-4 h-1 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-purple-500 to-violet-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="group bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 cursor-pointer">
+                <div class="p-6">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="text-3xl group-hover:scale-110 transition-transform duration-300">🎨</div>
+                    <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition-colors">Tailwind CSS</h3>
+                  </div>
+                  <p class="text-slate-400 text-sm group-hover:text-slate-300 transition-colors">Utility-first styling</p>
+                  <div class="mt-4 h-1 bg-slate-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-purple-500 to-violet-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Projects Section -->
+      <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden" id="projects">
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-cyan-500/15 to-teal-500/15 rounded-full filter blur-3xl animate-pulse"></div>
+          <div class="absolute bottom-20 right-10 w-72 h-72 bg-gradient-to-r from-purple-500/15 to-pink-500/15 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-full filter blur-3xl animate-blob"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Featured <span class="bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Projects</span>
+            </h2>
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              A showcase of my development work, from full-stack web applications to innovative solutions that solve real-world problems.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="group cursor-pointer glass-card hover-glow transition-all duration-500 hover:-translate-y-3 animate-fade-in border-2 border-transparent hover:border-cyan-400/50 overflow-hidden relative" data-project="1">
+              <div class="h-56 bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="ScanServe - QR Restaurant Ordering" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-emerald-500/20 to-teal-600/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-white opacity-90 drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="7" width="20" height="10" rx="2" /><path d="M8 7V5a4 4 0 018 0v2" /></svg>
+                </div>
+              </div>
+              <div class="p-6 bg-gradient-to-b from-slate-800/90 to-slate-900/90 backdrop-blur-sm">
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">ScanServe - QR Restaurant Ordering</h3>
+                <p class="text-slate-400 mb-4 text-sm leading-relaxed">Full-stack SaaS platform with QR-based ordering and role-based dashboards</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-gradient-to-r from-slate-700 to-slate-600 text-slate-300 border border-slate-600/50 text-xs rounded px-2 py-1">HTML</span>
+                  <span class="bg-gradient-to-r from-slate-700 to-slate-600 text-slate-300 border border-slate-600/50 text-xs rounded px-2 py-1">CSS</span>
+                  <span class="bg-gradient-to-r from-slate-700 to-slate-600 text-slate-300 border border-slate-600/50 text-xs rounded px-2 py-1">JavaScript</span>
+                  <span class="bg-gradient-to-r from-cyan-500/20 to-teal-500/20 text-cyan-400 border border-cyan-400/30 text-xs rounded px-2 py-1">+5 more</span>
+                </div>
+                <div class="flex gap-2">
+                  <button class="project-details-btn flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white border-0 rounded px-4 py-2">View Details</button>
+                </div>
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="group cursor-pointer glass-card hover-glow transition-all duration-500 hover:-translate-y-3 animate-fade-in border-2 border-transparent hover:border-cyan-400/50 overflow-hidden relative" data-project="2">
+              <div class="h-56 bg-gradient-to-r from-blue-500 to-cyan-600 flex items-center justify-center relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=400&q=80" alt="WhatsApp Order Form" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-cyan-600/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-white opacity-90 drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="7" width="20" height="10" rx="2" /><path d="M8 7V5a4 4 0 018 0v2" /></svg>
+                </div>
+              </div>
+              <div class="p-6 bg-gradient-to-b from-slate-800/90 to-slate-900/90 backdrop-blur-sm">
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">WhatsApp Order Form</h3>
+                <p class="text-slate-400 mb-4 text-sm leading-relaxed">Responsive form sending food orders directly to vendors via WhatsApp</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-gradient-to-r from-slate-700 to-slate-600 text-slate-300 border border-slate-600/50 text-xs rounded px-2 py-1">HTML</span>
+                  <span class="bg-gradient-to-r from-slate-700 to-slate-600 text-slate-300 border border-slate-600/50 text-xs rounded px-2 py-1">CSS</span>
+                  <span class="bg-gradient-to-r from-slate-700 to-slate-600 text-slate-300 border border-slate-600/50 text-xs rounded px-2 py-1">JavaScript</span>
+                  <span class="bg-gradient-to-r from-cyan-500/20 to-teal-500/20 text-cyan-400 border border-cyan-400/30 text-xs rounded px-2 py-1">+3 more</span>
+                </div>
+                <div class="flex gap-2">
+                  <button class="project-details-btn flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white border-0 rounded px-4 py-2">View Details</button>
+                </div>
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="group cursor-pointer glass-card hover-glow transition-all duration-500 hover:-translate-y-3 animate-fade-in border-2 border-transparent hover:border-cyan-400/50 overflow-hidden relative" data-project="3">
+              <div class="h-56 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center relative overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=80" alt="PG Finder Web App" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-purple-500/20 to-pink-600/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 text-white opacity-90 drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="7" width="20" height="10" rx="2" /><path d="M8 7V5a4 4 0 018 0v2" /></svg>
+                </div>
+              </div>
+              <div class="p-6 bg-gradient-to-b from-slate-800/90 to-slate-900/90 backdrop-blur-sm">
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">PG Finder Web App</h3>
+                <p class="text-slate-400 mb-4 text-sm leading-relaxed">Full-stack app with real-time filtering and dynamic AJAX search</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="bg-gradient-to-r from-slate-700 to-slate-600 text-slate-300 border border-slate-600/50 text-xs rounded px-2 py-1">React.js</span>
+                  <span class="bg-gradient-to-r from-slate-700 to-slate-600 text-slate-300 border border-slate-600/50 text-xs rounded px-2 py-1">Node.js</span>
+                  <span class="bg-gradient-to-r from-slate-700 to-slate-600 text-slate-300 border border-slate-600/50 text-xs rounded px-2 py-1">MySQL</span>
+                  <span class="bg-gradient-to-r from-cyan-500/20 to-teal-500/20 text-cyan-400 border border-cyan-400/30 text-xs rounded px-2 py-1">+3 more</span>
+                </div>
+                <div class="flex gap-2">
+                  <button class="project-details-btn flex-1 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white border-0 rounded px-4 py-2">View Details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal for Project Details (static, to be toggled by JS) -->
+          <div id="project-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden">
+            <div class="max-w-5xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-slate-900 to-slate-800 border border-cyan-400/30 text-white rounded-xl p-8 relative">
+              <button id="close-project-modal" class="absolute right-4 top-4 p-2 hover:bg-slate-700 rounded-full transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
+              <div id="project-modal-content">
+                <!-- Project details will be injected here by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- DSA Profiles Section -->
+      <section class="py-20 bg-gradient-to-b from-slate-900 via-gray-900 to-slate-900 relative overflow-hidden" id="coding">
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-r from-orange-500/15 via-red-500/25 to-pink-500/15 rounded-full filter blur-3xl animate-pulse"></div>
+          <div class="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-r from-red-500/20 via-rose-500/30 to-orange-500/20 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Coding <span class="bg-gradient-to-r from-orange-400 via-red-400 to-pink-400 bg-clip-text text-transparent">Profiles</span>
+            </h2>
+            <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              200+ problems solved across multiple platforms with consistent practice.
+            </p>
+          </div>
+          <div class="flex justify-center items-center gap-12 animate-fade-in" style="animation-delay: 200ms;">
+            <a href="https://leetcode.com/u/rkabhishekdwivedi/" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-4 p-8 rounded-2xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-orange-500/50 transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-orange-500/50">
+              <div class="p-6 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full group-hover:rotate-12 transition-transform duration-500 shadow-lg group-hover:shadow-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6a2 2 0 012-2h2a2 2 0 012 2v6m-6 0h6"/></svg>
+              </div>
+              <div class="text-center">
+                <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors mb-2">LeetCode</h3>
+                <div class="flex items-center gap-2 text-slate-400 group-hover:text-slate-300 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 13v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6m16-6V6a2 2 0 00-2-2H6a2 2 0 00-2 2v1m16 0a2 2 0 01-2 2H6a2 2 0 01-2-2" /></svg>
+                  <span class="text-sm">View Profile</span>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-yellow-500 opacity-0 group-hover:opacity-20 rounded-2xl transition-opacity duration-500 blur-xl"></div>
+            </a>
+            <a href="https://www.geeksforgeeks.org/user/r_abhishek/" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-4 p-8 rounded-2xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 hover:border-green-500/50 transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-green-500/50">
+              <div class="p-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full group-hover:rotate-12 transition-transform duration-500 shadow-lg group-hover:shadow-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12l2 2 4-4" /></svg>
+              </div>
+              <div class="text-center">
+                <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors mb-2">GeeksforGeeks</h3>
+                <div class="flex items-center gap-2 text-slate-400 group-hover:text-slate-300 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 13v6a2 2 0 01-2 2H8a2 2 0 01-2-2v-6m16-6V6a2 2 0 00-2-2H6a2 2 0 00-2 2v1m16 0a2 2 0 01-2 2H6a2 2 0 01-2-2" /></svg>
+                  <span class="text-sm">View Profile</span>
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 opacity-0 group-hover:opacity-20 rounded-2xl transition-opacity duration-500 blur-xl"></div>
+            </a>
+          </div>
+          <div class="text-center mt-16 animate-fade-in" style="animation-delay: 400ms;">
+            <div class="inline-flex items-center gap-8 p-6 bg-gradient-to-r from-slate-800/80 to-slate-900/80 rounded-2xl border border-slate-700/50">
+              <div class="text-center">
+                <div class="text-3xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent mb-1">200+</div>
+                <div class="text-sm text-slate-400">Problems Solved</div>
+              </div>
+              <div class="w-px h-12 bg-slate-600"></div>
+              <div class="text-center">
+                <div class="text-3xl font-bold bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent mb-1">2+</div>
+                <div class="text-sm text-slate-400">Platforms</div>
+              </div>
+              <div class="w-px h-12 bg-slate-600"></div>
+              <div class="text-center">
+                <div class="text-3xl font-bold bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent mb-1">Daily</div>
+                <div class="text-sm text-slate-400">Practice</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Resume Section -->
+      <section class="py-20 relative overflow-hidden" id="resume">
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-violet-500/10 rounded-full filter blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+              My <span class="gradient-text">Resume</span>
+            </h2>
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              Download my comprehensive resume showcasing my skills, experience, and achievements in full-stack development.
+            </p>
+          </div>
+          <div class="max-w-4xl mx-auto">
+            <div class="glass-card hover-glow transition-all duration-300 hover:-translate-y-2 animate-fade-in border-0 overflow-hidden">
+              <div class="h-2 bg-gradient-to-r from-purple-500 to-violet-500"></div>
+              <div class="p-8">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                  <div class="relative">
+                    <div class="bg-gradient-to-br from-slate-700 to-slate-800 rounded-xl p-8 border border-purple-400/20 hover:border-purple-400/40 transition-colors">
+                      <div class="flex items-center gap-4 mb-6">
+                        <div class="p-3 bg-gradient-to-r from-purple-500 to-violet-500 rounded-full">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="4" y="4" width="16" height="16" rx="2" /><path d="M8 8h8v8H8z" /></svg>
+                        </div>
+                        <div>
+                          <h3 class="text-2xl font-bold text-white">Abhishek Dwivedi</h3>
+                          <p class="text-slate-400">Full-Stack Developer Resume</p>
+                        </div>
+                      </div>
+                      <div class="space-y-4 text-slate-300">
+                        <div class="flex items-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" /></svg>
+                          <span class="text-sm">B.Tech CSE | CGPA: 7.72/10</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" /></svg>
+                          <span class="text-sm">Full-Stack Development Experience</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" /></svg>
+                          <span class="text-sm">200+ DSA Problems Solved</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" /></svg>
+                          <span class="text-sm">Internship at Internshala</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" /></svg>
+                          <span class="text-sm">Multiple Full-Stack Projects</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-purple-500 to-violet-500 opacity-0 group-hover:opacity-20 rounded-xl transition-opacity duration-500 blur-xl"></div>
+                  </div>
+                  <div class="text-center lg:text-left">
+                    <h3 class="text-3xl font-bold text-white mb-6">Ready to Download?</h3>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                      Get the complete overview of my technical skills, educational background, 
+                      professional experience, and project portfolio in a professionally formatted document.
+                    </p>
+                    <div class="space-y-4">
+                      <a href="#" download class="w-full lg:w-auto bg-gradient-to-r from-purple-500 to-violet-500 hover:from-purple-400 hover:to-violet-400 text-white px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl btn-pulse flex items-center justify-center gap-3 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" /></svg>
+                        Download Resume
+                      </a>
+                      <a href="#" class="w-full lg:w-auto border-purple-400/50 text-purple-400 hover:bg-purple-400/10 hover:border-purple-400 px-8 py-4 text-lg font-semibold hover:scale-105 transition-all duration-300 border flex items-center justify-center gap-3 rounded">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A2 2 0 0020 6.382V5a2 2 0 00-2-2H6a2 2 0 00-2 2v1.382a2 2 0 00.447 1.342L9 10m6 0v10a2 2 0 01-2 2H7a2 2 0 01-2-2V10m6 0l-6-6" /></svg>
+                        Preview Online
+                      </a>
+                    </div>
+                    <div class="mt-8 p-4 bg-gradient-to-r from-purple-500/10 to-violet-500/10 rounded-lg border border-purple-400/20">
+                      <p class="text-sm text-slate-400">
+                        📄 <strong class="text-purple-400">Updated:</strong> December 2024 | 
+                        📊 <strong class="text-purple-400">Format:</strong> PDF | 
+                        📝 <strong class="text-purple-400">Size:</strong> 2 pages
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6 mt-12 animate-fade-in" style="animation-delay: 400ms;">
+              <div class="glass-card p-6 text-center rounded-xl hover-glow transition-all duration-300">
+                <div class="text-2xl font-bold gradient-text mb-1">1+ Years</div>
+                <div class="text-sm text-slate-400">Experience</div>
+              </div>
+              <div class="glass-card p-6 text-center rounded-xl hover-glow transition-all duration-300">
+                <div class="text-2xl font-bold gradient-text mb-1">10+</div>
+                <div class="text-sm text-slate-400">Projects</div>
+              </div>
+              <div class="glass-card p-6 text-center rounded-xl hover-glow transition-all duration-300">
+                <div class="text-2xl font-bold gradient-text mb-1">15+</div>
+                <div class="text-sm text-slate-400">Technologies</div>
+              </div>
+              <div class="glass-card p-6 text-center rounded-xl hover-glow transition-all duration-300">
+                <div class="text-2xl font-bold gradient-text mb-1">Multiple</div>
+                <div class="text-sm text-slate-400">Certifications</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section -->
+      <section class="py-20 relative overflow-hidden" id="contact">
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-20 left-10 w-80 h-80 bg-gradient-to-r from-purple-500/15 to-violet-500/15 rounded-full filter blur-3xl animate-pulse"></div>
+          <div class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-indigo-500/15 to-blue-500/15 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
+          <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-violet-500/10 to-purple-500/10 rounded-full filter blur-3xl animate-blob"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="text-center mb-16 animate-fade-in">
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Get In <span class="bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">Touch</span>
+            </h2>
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              I'm always open to discussing new opportunities, collaborations, or just having a tech chat. 
+              Let's connect and build something amazing together!
+            </p>
+          </div>
+          <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div class="space-y-8 animate-fade-in">
+              <div class="glass-card hover-glow transition-all duration-500 border-2 border-transparent hover:border-purple-400/50 overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-purple-500 via-violet-500 to-indigo-500"></div>
+                <div class="p-8 bg-gradient-to-br from-slate-800/90 to-slate-900/90">
+                  <h3 class="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+                  <p class="text-slate-400 mb-8 leading-relaxed">
+                    I'm currently looking for new opportunities in full-stack development. 
+                    Whether you have a project in mind or just want to chat about technology, 
+                    I'd love to hear from you.
+                  </p>
+                  <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-purple-600/10 hover:scale-105 transition-all duration-300 border border-slate-700/30 hover:border-purple-400/30">
+                      <div class="p-3 bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                      </div>
+                      <div>
+                        <div class="text-sm text-slate-500 font-medium">Email</div>
+                        <div class="font-semibold text-white">abhishek.dwivedi2022@glbajajgroup.org</div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-violet-500/10 to-violet-600/10 hover:scale-105 transition-all duration-300 border border-slate-700/30 hover:border-purple-400/30">
+                      <div class="p-3 bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10a1 1 0 011-1h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V10zm0 0V6a1 1 0 011-1h16a1 1 0 011 1v4" /></svg>
+                      </div>
+                      <div>
+                        <div class="text-sm text-slate-500 font-medium">Phone</div>
+                        <div class="font-semibold text-white">+91 9026019016</div>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-indigo-500/10 to-indigo-600/10 hover:scale-105 transition-all duration-300 border border-slate-700/30 hover:border-purple-400/30">
+                      <div class="p-3 bg-gradient-to-r from-slate-700 to-slate-600 rounded-xl shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 12.414a8 8 0 111.414-1.414l4.243 4.243a1 1 0 01-1.414 1.414z" /></svg>
+                      </div>
+                      <div>
+                        <div class="text-sm text-slate-500 font-medium">Location</div>
+                        <div class="font-semibold text-white">Mathura, Uttar Pradesh</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-8 pt-8 border-t border-slate-700">
+                    <h4 class="text-lg font-semibold text-white mb-6">Follow Me</h4>
+                    <div class="flex gap-4">
+                      <a href="https://github.com/abhishekdwivedi2022" target="_blank" rel="noopener noreferrer" class="p-4 bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl transition-all duration-300 hover:scale-110 hover:text-slate-300 hover-glow shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.529 2.341 1.088 2.91.832.091-.646.35-1.088.636-1.339-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.337 4.687-4.565 4.936.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.577.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                      </a>
+                      <a href="#" target="_blank" rel="noopener noreferrer" class="p-4 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl transition-all duration-300 hover:scale-110 hover:text-blue-400 hover-glow shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 11-12 0 6 6 0 0112 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7m0 0h-3m3 0h3"/></svg>
+                      </a>
+                      <a href="#resume" class="p-4 bg-gradient-to-r from-purple-600 to-violet-700 rounded-xl transition-all duration-300 hover:scale-110 hover:text-purple-400 hover-glow shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" /></svg>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-4">
+                <div class="glass-card hover-glow transition-all duration-300 hover:scale-105 border border-slate-700/50 hover:border-purple-400/50">
+                  <div class="p-4 text-center bg-gradient-to-br from-slate-800/80 to-slate-900/80">
+                    <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-1">10+</div>
+                    <div class="text-sm text-slate-400">Projects</div>
+                  </div>
+                </div>
+                <div class="glass-card hover-glow transition-all duration-300 hover:scale-105 border border-slate-700/50 hover:border-purple-400/50">
+                  <div class="p-4 text-center bg-gradient-to-br from-slate-800/80 to-slate-900/80">
+                    <div class="text-2xl font-bold bg-gradient-to-r from-violet-400 to-indigo-400 bg-clip-text text-transparent mb-1">200+</div>
+                    <div class="text-sm text-slate-400">Problems Solved</div>
+                  </div>
+                </div>
+                <div class="glass-card hover-glow transition-all duration-300 hover:scale-105 border border-slate-700/50 hover:border-purple-400/50">
+                  <div class="p-4 text-center bg-gradient-to-br from-slate-800/80 to-slate-900/80">
+                    <div class="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent mb-1">15+</div>
+                    <div class="text-sm text-slate-400">Technologies</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glass-card hover-glow transition-all duration-500 animate-slide-in-right border-2 border-transparent hover:border-violet-400/50 overflow-hidden">
+              <div class="h-2 bg-gradient-to-r from-violet-500 via-indigo-500 to-blue-500"></div>
+              <div class="p-8 bg-gradient-to-br from-slate-800/90 to-slate-900/90">
+                <h3 class="text-2xl font-bold text-white mb-6">Send a Message</h3>
+                <form id="contact-form" class="space-y-6">
+                  <div>
+                    <label for="name" class="block text-sm font-semibold text-slate-300 mb-3">Your Name</label>
+                    <input id="name" name="name" type="text" required placeholder="Enter your full name" class="bg-slate-800/70 border-2 border-slate-600/50 text-white placeholder:text-slate-500 focus:border-purple-400 focus:ring-purple-400 rounded-xl p-4 transition-all duration-300 hover:border-slate-500/70 w-full" />
+                  </div>
+                  <div>
+                    <label for="email" class="block text-sm font-semibold text-slate-300 mb-3">Email Address</label>
+                    <input id="email" name="email" type="email" required placeholder="Enter your email address" class="bg-slate-800/70 border-2 border-slate-600/50 text-white placeholder:text-slate-500 focus:border-purple-400 focus:ring-purple-400 rounded-xl p-4 transition-all duration-300 hover:border-slate-500/70 w-full" />
+                  </div>
+                  <div>
+                    <label for="message" class="block text-sm font-semibold text-slate-300 mb-3">Message</label>
+                    <textarea id="message" name="message" required placeholder="Tell me about your project or just say hello!" rows="5" class="bg-slate-800/70 border-2 border-slate-600/50 text-white placeholder:text-slate-500 focus:border-purple-400 focus:ring-purple-400 resize-none rounded-xl p-4 transition-all duration-300 hover:border-slate-500/70 w-full"></textarea>
+                  </div>
+                  <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-violet-500 hover:from-purple-400 hover:to-violet-400 text-white font-semibold py-4 transition-all duration-300 hover:scale-105 btn-pulse rounded-xl shadow-lg hover:shadow-xl flex items-center justify-center">
+                    <span id="contact-submit-text">Send Message</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer Section -->
+      <footer class="bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 text-white py-16 relative">
+        <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 z-50" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" /></svg>
+        </button>
+        <div class="container mx-auto px-6">
+          <div class="grid md:grid-cols-3 gap-12 mb-12">
+            <div class="animate-fade-in">
+              <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Abhishek Dwivedi</h3>
+              <p class="text-gray-300 mb-6 leading-relaxed">Full-Stack Developer passionate about creating innovative web solutions. Always learning, always building, always growing.</p>
+              <div class="flex gap-4">
+                <a href="https://github.com/abhishekdwivedi2022" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-800 hover:bg-purple-600 rounded-full transition-colors duration-200 hover:scale-110">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.529 2.341 1.088 2.91.832.091-.646.35-1.088.636-1.339-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.337 4.687-4.565 4.936.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.577.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="p-3 bg-gray-800 hover:bg-purple-600 rounded-full transition-colors duration-200 hover:scale-110">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 11-12 0 6 6 0 0112 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v7m0 0h-3m3 0h3"/></svg>
+                </a>
+                <a href="mailto:abhishek.dwivedi@example.com" class="p-3 bg-gray-800 hover:bg-purple-600 rounded-full transition-colors duration-200 hover:scale-110">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                </a>
+              </div>
+            </div>
+            <div class="animate-fade-in" style="animation-delay: 200ms;">
+              <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+              <ul class="space-y-3">
+                <li><a href="#about" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 hover:translate-x-1 inline-block">About</a></li>
+                <li><a href="#skills" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 hover:translate-x-1 inline-block">Skills</a></li>
+                <li><a href="#projects" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 hover:translate-x-1 inline-block">Projects</a></li>
+                <li><a href="#experience" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 hover:translate-x-1 inline-block">Experience</a></li>
+                <li><a href="#contact" class="text-gray-300 hover:text-purple-400 transition-colors duration-200 hover:translate-x-1 inline-block">Contact</a></li>
+              </ul>
+            </div>
+            <div class="animate-fade-in" style="animation-delay: 400ms;">
+              <h4 class="text-lg font-semibold mb-6">Let's Connect</h4>
+              <div class="space-y-4">
+                <div><p class="text-gray-300">📧 abhishek.dwivedi@example.com</p></div>
+                <div><p class="text-gray-300">📱 +91 XXXXX XXXXX</p></div>
+                <div><p class="text-gray-300">📍 Greater Noida, India</p></div>
+                <div><p class="text-gray-300">🎓 B.Tech CSE 2026</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-gray-700 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p class="text-gray-400 text-sm flex items-center gap-2">© 2024 Abhishek Dwivedi. Made with <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-500 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21C12 21 7 16.5 7 12.5C7 9.5 9.5 7 12 7C14.5 7 17 9.5 17 12.5C17 16.5 12 21 12 21Z" /></svg> using React & Tailwind CSS</p>
+              <p class="text-gray-400 text-sm">Designed & Developed with passion for clean code</p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="absolute -top-10 -left-10 w-40 h-40 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+          <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-10"></div>
+        </div>
+      </footer>
+    </div>
+    <script>
+      // Smooth scroll for navigation and quick links
+      document.querySelectorAll('.nav-link, .animate-fade-in a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const target = this.getAttribute('data-target') || this.getAttribute('href');
+          if (target && target.startsWith('#')) {
+            e.preventDefault();
+            document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+            if (window.innerWidth < 768) {
+              document.getElementById('mobile-menu').classList.add('hidden');
+              document.getElementById('menu-icon').classList.remove('hidden');
+              document.getElementById('close-icon').classList.add('hidden');
+            }
+          }
+        });
+      });
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const menu = document.getElementById('mobile-menu');
+          const menuIcon = document.getElementById('menu-icon');
+          const closeIcon = document.getElementById('close-icon');
+          if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+          } else {
+            menu.classList.add('hidden');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+          }
+        });
+      }
+
+      // Skills tab switching (static demo, only first tab active)
+      document.querySelectorAll('.skills-tab').forEach((tab, idx) => {
+        tab.addEventListener('click', function() {
+          document.querySelectorAll('.skills-tab').forEach(t => t.classList.remove('bg-gradient-to-r', 'from-purple-500', 'to-violet-600', 'text-white', 'shadow-lg', 'shadow-purple-500/25'));
+          this.classList.add('bg-gradient-to-r', 'from-purple-500', 'to-violet-600', 'text-white', 'shadow-lg', 'shadow-purple-500/25');
+          // For demo, only first tab is filled; in a real app, would swap grid content
+        });
+      });
+
+      // Project modal (static demo)
+      document.querySelectorAll('.project-details-btn').forEach((btn, idx) => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const modal = document.getElementById('project-modal');
+          const content = document.getElementById('project-modal-content');
+          modal.classList.remove('hidden');
+          // For demo, show static content
+          content.innerHTML = `<h2 class='text-2xl font-bold mb-4'>Project Details</h2><p class='mb-4'>This is a static modal for project details. In the real app, this would show full project info.</p><button id='close-project-modal-inner' class='mt-4 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded'>Close</button>`;
+          document.getElementById('close-project-modal-inner').onclick = () => modal.classList.add('hidden');
+        });
+      });
+      document.getElementById('close-project-modal').onclick = () => document.getElementById('project-modal').classList.add('hidden');
+      document.getElementById('project-modal').addEventListener('click', function(e) {
+        if (e.target === this) this.classList.add('hidden');
+      });
+
+      // Expand/collapse for About section education
+      const eduBtn = document.querySelector('[data-toggle="education"]');
+      if (eduBtn) {
+        eduBtn.addEventListener('click', function() {
+          const details = document.getElementById('education-details');
+          if (details.classList.contains('hidden')) {
+            details.classList.remove('hidden');
+            eduBtn.innerHTML = `<svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 mr-2' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 15l7-7 7 7' /></svg>Hide Previous Education`;
+          } else {
+            details.classList.add('hidden');
+            eduBtn.innerHTML = `<svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 mr-2' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7' /></svg>Show Previous Education`;
+          }
+        });
+      }
+
+      // Contact form (mailto)
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = contactForm.name.value;
+          const email = contactForm.email.value;
+          const message = contactForm.message.value;
+          const subject = encodeURIComponent('Portfolio Message from ' + name);
+          const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+          window.location.href = `mailto:abhishek.dwivedi2022@gmail.com?subject=${subject}&body=${body}`;
+          document.getElementById('contact-submit-text').textContent = 'Opening Email...';
+          setTimeout(() => {
+            document.getElementById('contact-submit-text').textContent = 'Send Message';
+            contactForm.reset();
+          }, 2000);
+        });
+      }
+
+      // Scroll-to-top button
+      const scrollBtn = document.getElementById('scroll-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          scrollBtn.style.display = 'block';
+        } else {
+          scrollBtn.style.display = 'none';
+        }
+      });
+      scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // Animated particles in hero section
+      const particles = document.getElementById('particles');
+      if (particles) {
+        for (let i = 0; i < 20; i++) {
+          const p = document.createElement('div');
+          p.className = 'particle';
+          p.style.left = Math.random() * 100 + '%';
+          p.style.animationDelay = Math.random() * 6 + 's';
+          p.style.animationDuration = 6 + Math.random() * 4 + 's';
+          const colors = [
+            'rgba(147, 51, 234, 0.8)',
+            'rgba(139, 92, 246, 0.8)',
+            'rgba(59, 130, 246, 0.8)',
+            'rgba(168, 85, 247, 0.8)'
+          ];
+          p.style.background = `radial-gradient(circle, ${colors[i % 4]} 0%, transparent 70%)`;
+          p.style.width = p.style.height = 16 + Math.random() * 24 + 'px';
+          particles.appendChild(p);
+        }
+      }
+
+      // Hero section role animation
+      const roles = ["Full-Stack Developer", "Problem Solver", "Tech Explorer"];
+      let currentRole = 0;
+      setInterval(() => {
+        currentRole = (currentRole + 1) % roles.length;
+        document.getElementById('role-text').textContent = roles[currentRole];
+      }, 3000);
+    </script>
+  </body>
+</html> 
